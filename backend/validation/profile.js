@@ -9,8 +9,9 @@ module.exports = function validateRegisterInput(data) {
   let errors = {};
 
   // Empty Data string
-  data.email = !isEmpty(data.email) ? data.email : "";
-  data.password = !isEmpty(data.password) ? data.password : "";
+  data.handle = !isEmpty(data.handle) ? data.handle : ''
+  data.password = !isEmpty(data.password) ? data.password : ''
+  data.password = !isEmpty(data.password) ? data.password : ''
 
   // Email Validation
   if (validator.isEmpty(data.email)) {
