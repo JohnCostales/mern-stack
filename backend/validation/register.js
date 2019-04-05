@@ -1,8 +1,8 @@
 /*
-    Documentation URL for Validator: 'https://github.com/chriso/validator.js/'
+    Documentation URL for Validator: 'https://github.com/chriso/Validator.js/'
 */
 
-const validator = require("validator");
+const Validator = require("validator");
 const isEmpty = require("lodash.isempty");
 
 module.exports = function validateRegisterInput(data) {
@@ -17,56 +17,56 @@ module.exports = function validateRegisterInput(data) {
 
   // Name Validation
   if (
-    !validator.isLength(data.name, {
+    !Validator.isLength(data.name, {
       min: 2,
       max: 30
     })
   ) {
     errors.name = "Name must be between 2 and 30 character";
   }
-  if (validator.isEmpty(data.name)) {
+  if (Validator.isEmpty(data.name)) {
     errors.name = "Name field is required";
   }
 
   // Username Validation
   if (
-    !validator.isLength(data.username, {
+    !Validator.isLength(data.username, {
       min: 2,
       max: 30
     })
   ) {
     errors.username = "Username must be between 2 and 30 character";
   }
-  if (validator.isEmpty(data.username)) {
+  if (Validator.isEmpty(data.username)) {
     errors.username = "Username field is required";
   }
 
   // Email Validation
-  if (validator.isEmpty(data.email)) {
+  if (Validator.isEmpty(data.email)) {
     errors.email = "Email field is required";
   }
-  if (!validator.isEmail(data.email)) {
+  if (!Validator.isEmail(data.email)) {
     errors.email = "Email field is invalid";
   }
 
   // Password Validation
   if (
-    !validator.isLength(data.password, {
+    !Validator.isLength(data.password, {
       min: 6,
       max: 30
     })
   ) {
     errors.password = "Password must be at least 6 characters";
   }
-  if (validator.isEmpty(data.password)) {
+  if (Validator.isEmpty(data.password)) {
     errors.password = "Password field is required";
   }
 
   // Confirm Password
-  if (validator.isEmpty(data.confPass)) {
+  if (Validator.isEmpty(data.confPass)) {
     errors.confPass = "Please confirm your password";
   }
-  if (!validator.equals(data.password, data.confPass)) {
+  if (!Validator.equals(data.password, data.confPass)) {
     errors.confPass = "Passwords must match";
   }
 
