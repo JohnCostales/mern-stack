@@ -11,7 +11,7 @@ const thread = require("../backend/api/thread");
 
 const app = express();
 
-// app.get('/', (req, res) => res.send('test?'))
+app.get('/', (req, res) => res.send('test?'))
 
 // Body-Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));

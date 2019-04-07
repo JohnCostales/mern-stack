@@ -28,18 +28,18 @@ module.exports = function validateRegisterInput(data) {
     errors.name = "Name field is required";
   }
 
-  // Username Validation
-  if (
-    !Validator.isLength(data.username, {
-      min: 2,
-      max: 30
-    })
-  ) {
-    errors.username = "Username must be between 2 and 30 character";
-  }
-  if (Validator.isEmpty(data.username)) {
-    errors.username = "Username field is required";
-  }
+  // // Username Validation
+  // if (
+  //   !Validator.isLength(data.username, {
+  //     min: 2,
+  //     max: 30
+  //   })
+  // ) {
+  //   errors.username = "Username must be between 2 and 30 character";
+  // }
+  // if (Validator.isEmpty(data.username)) {
+  //   errors.username = "Username field is required";
+  // }
 
   // Email Validation
   if (Validator.isEmpty(data.email)) {

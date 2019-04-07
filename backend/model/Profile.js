@@ -43,6 +43,14 @@ const ProfileSchema = new Schema({
       type: String
     }
   },
+  // contact: {
+  //   mobile: {
+  //     type: String
+  //   },
+  //   email: {
+  //     type: String
+  //   },
+  // },
   experience: [
     {
       title: {
@@ -83,8 +91,7 @@ const ProfileSchema = new Schema({
         required: true
       },
       fieldOfStudy: {
-        type: String,
-        required: true
+        type: String
       },
       location: {
         type: String
