@@ -1,5 +1,7 @@
-// Connection port to Mongo Cloud
-module.exports = {
-    mongoURI: 'mongodb+srv://SpiceBag:secret1234@cluster0-dg1qb.mongodb.net/test?retryWrites=true',
-    secretOrKey: 'secret'
+// Just for setting up Keys to protect the database information
+// Production & Developement keys
+if (process.env.NODE_ENV === 'production') {
+    module.exports = require('./keys_prod');
+} else {
+    module.exports = require('./keys_dev');
 }

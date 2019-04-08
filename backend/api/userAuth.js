@@ -23,10 +23,10 @@ router.get("/test", (req, res) =>
   })
 );
 
-// @route GET api/authentication/register
+// @route POST api/authentication/register
 // @desc Register Authentication
 // @access Public
-router.get("/register", (req, res) => {
+router.post("/register", (req, res) => {
   const { errors, isValid } = validateRegisterInput(req.body);
 
   // Check Validation
@@ -49,7 +49,6 @@ router.get("/register", (req, res) => {
       // Create new user
       const newUser = new User({
         name: req.body.name,
-        username: req.body.name,
         email: req.body.email,
         avatar,
         password: req.body.password
@@ -100,7 +99,6 @@ router.post("/login", (req, res) => {
         const payload = {
           id: user.id,
           name: user.name,
-          username: user.username,
           avatar: user.avatar
         }; // Create JWT Payload
         // Sign Token
@@ -134,7 +132,6 @@ router.get(
     res.json({
       id: req.user.id,
       name: req.user.name,
-      username: req.user.username,
       email: req.user.email
     });
   }

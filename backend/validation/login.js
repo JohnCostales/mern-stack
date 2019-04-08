@@ -5,7 +5,7 @@
 const validator = require("validator");
 const isEmpty = require("lodash.isempty");
 
-module.exports = function validateRegisterInput(data) {
+module.exports = function validateLoginInput(data) {
   let errors = {};
 
   // Empty Data string

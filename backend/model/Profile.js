@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const Schema = mongoose.Schema
 
 // Create Schema
 const ProfileSchema = new Schema({
@@ -43,14 +43,14 @@ const ProfileSchema = new Schema({
       type: String
     }
   },
-  // contact: {
-  //   mobile: {
-  //     type: String
-  //   },
-  //   email: {
-  //     type: String
-  //   },
-  // },
+  contact: {
+    mobile: {
+      type: String
+    },
+    email: {
+      type: String
+    },
+  },
   experience: [
     {
       title: {
@@ -118,4 +118,4 @@ const ProfileSchema = new Schema({
   }
 });
 
-module.exports = Profile = mongoose.model("profile", ProfileSchema);
+module.exports = Profile = mongoose.model("profile", ProfileSchema)
