@@ -14,7 +14,7 @@ export default function (state = initialState, action) {
                 // add to state
                 ...state,
                 // fill user with userData
-                isAutheticated: !isEmpty(action.payload),
+                isAuthenticated: !isEmpty(action.payload),
                 user: action.payload
             }
         default:

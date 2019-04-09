@@ -6,6 +6,11 @@ img {
   width: 100%;
 }
 
+.avatar-img {
+  width: 25px;
+  margin-right: 5px;
+}
+
 .background-image {
   position: relative;
   background: url("./img/minimalist.jpg") no-repeat;
