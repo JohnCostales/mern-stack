@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 import jwt_decode from 'jwt-decode';
 import setAuthtoken from './utils/SetAuthtoken';
+
+// Actions
 import { setCurrentUser, logoutUser } from './actions/authAction';
+import { clearCurrentProfile } from './actions/profileAction';
 
 import './App.css';
 
+// Components used
 import Navbar from './components/layouts/Navbar';
 import Footer from './components/layouts/Footer';
 import Landing from './components/layouts/Landing';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Dashboard from './components/dashboard/Dashboard';
-import { clearCurrentProfile } from './actions/profileAction';
+import PrivateRoute from './components/common/PrivateRoute'
+import CreateProfile from './components/create-profile/CreateProfile'
 
 // Check for tokens and keep authenticated
 if (localStorage.jwtToken) {
@@ -45,10 +50,13 @@ class App extends Component {
           <div className="App">
             <Navbar />
             <div className="background-image">
-              <div className="dark-overlay landing-inner text-light">
+              <div className="landing-inner text-light">
                 <Route exact path="/" component={Landing} />
                 <div className="container">
-                  <Route exact path="/dashboard" component={Dashboard} />
+                  <Switch>
+                    <PrivateRoute exact path="/dashboard" component={Dashboard} />
+                    <PrivateRoute exact path="/create-profile" component={CreateProfile} />
+                  </Switch>
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
                 </div>

@@ -1,15 +1,15 @@
-import axios from 'axios';
+import axios from 'axios'
 import {
   PROFILE_LOADING,
-  GET_ERRORS,
   GET_PROFILE,
-  CLEAR_CURRENT_PROFILE
-} from './types';
+  CLEAR_CURRENT_PROFILE,
+  GET_ERRORS
+} from './types'
 
 // Get current profiles.
 export const getCurrentProfile = () => dispatch => {
   // Do an action before request
-  dispatch(setProfileLoading());
+  dispatch(setProfileLoading())
   axios
     .get('/api/profile')
     .then(res =>
@@ -23,19 +23,33 @@ export const getCurrentProfile = () => dispatch => {
         type: GET_PROFILE,
         payload: {}
       })
-    );
-};
+    )
+}
+
+// Create Profile with profileData and history 
+// and dispatch with redux thunk
+export const createProfile = (profileData, history) => dispatch => {
+  axios
+    .post('/api/profile', profileData)
+    .then(res => history.push('/dashboard'))
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    )
+}
 
 // Profile Loading
 export const setProfileLoading = () => {
   return {
     type: PROFILE_LOADING
-  };
-};
+  }
+}
 
 // Clear profile
 export const clearCurrentProfile = () => {
   return {
     type: CLEAR_CURRENT_PROFILE
-  };
-};
+  }
+}

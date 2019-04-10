@@ -13,12 +13,29 @@ img {
 
 .background-image {
   position: relative;
-  background: url("./img/minimalist.jpg") no-repeat;
-  background-size: cover;
+  /* background: url("./img/minimalist.jpg") no-repeat; */
+
+  background-image: #141e30; /* fallback for old browsers */
+  background-image: -webkit-linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background-image: linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  background-size: auto;
   background-position: center;
-  height: 100vh;
+  min-height: 100vh;
   margin-top: -24px;
   margin-bottom: -50px;
+}
+
+.default-text-colour {
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .landing-inner {
@@ -26,7 +43,7 @@ img {
 }
 
 .bg-lightblue {
-  background-color: #a2d2df;
+  background-color: #ffffff;
 }
 
 .dark-overlay {
@@ -49,4 +66,10 @@ img {
 
 .form-control::placeholder {
   color: #bbb !important;
+}
+
+.loading-spinner {
+  width: 200px;
+  margin: auto;
+  display: block;
 }
