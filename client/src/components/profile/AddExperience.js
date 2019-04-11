@@ -36,9 +36,13 @@ class AddExperience extends Component {
         // console.log('submit')
 
         // combine the data properties of the state
-        // combine the data properties of the state
         const expData = {
             ...this.state
+        }
+        // Bug fix when the endDate is filled then current is checked
+        // this will empty the endDate into a blank
+        if (expData.endDate !== "" && expData.disabled) {
+            expData.endDate = ""
         }
         // Avoid sending these
         delete expData["disabled"]

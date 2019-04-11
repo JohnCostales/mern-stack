@@ -41,6 +41,12 @@ class AddEducation extends Component {
         const eduData = {
             ...this.state
         }
+
+        // Bug fix when the endDate is filled then current is checked
+        // this will empty the endDate into a blank
+        if (eduData.endDate !== "" && eduData.disabled) {
+            eduData.endDate = ""
+        }
         // Avoid sending these
         delete eduData["disabled"]
         delete eduData["errors"]

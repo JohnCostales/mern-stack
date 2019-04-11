@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import { getCurrentProfile } from '../../actions/profileAction'
 import Spinner from '../common/spinner'
 import ProfileActions from './ProfileActions.js'
+import Experience from './Experience'
+import Education from './Education'
 
 
 class Dashboard extends Component {
@@ -13,7 +15,7 @@ class Dashboard extends Component {
     this.props.getCurrentProfile()
   }
 
-  render() {
+render() {
     const { user } = this.props.auth
     const { profile, loading } = this.props.profile
 
@@ -33,8 +35,9 @@ class Dashboard extends Component {
               </Link>
             </p>
             <ProfileActions />
-            {/* EXP AND EDUCATION */}
-            
+            <Experience experience={profile.experience} />
+            <Education education={profile.education} />
+
           </div>
         )
       } else {
