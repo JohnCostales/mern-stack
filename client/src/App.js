@@ -19,7 +19,8 @@ import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Dashboard from './components/dashboard/Dashboard';
 import PrivateRoute from './components/common/PrivateRoute'
-import CreateProfile from './components/create-profile/CreateProfile'
+import CreateProfile from './components/profile/CreateProfile'
+import EditProfile from './components/profile/EditProfile';
 
 // Check for tokens and keep authenticated
 if (localStorage.jwtToken) {
@@ -55,7 +56,12 @@ class App extends Component {
                 <div className="container">
                   <Switch>
                     <PrivateRoute exact path="/dashboard" component={Dashboard} />
+                  </Switch>
+                  <Switch>
                     <PrivateRoute exact path="/create-profile" component={CreateProfile} />
+                  </Switch>
+                  <Switch>
+                    <PrivateRoute exact path="/edit-profile" component={EditProfile} />
                   </Switch>
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />

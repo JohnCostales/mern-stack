@@ -25,7 +25,7 @@ class CreateProfile extends Component {
       linkedin: '',
       instagram: '',
       errors: {}
-    };
+    }
     this.onSubmit = this.onSubmit.bind(this)
   }
 
@@ -33,12 +33,12 @@ class CreateProfile extends Component {
   componentWillReceiveProps(nextProps) {
     // Set state if props is an error
     if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors });
+      this.setState({ errors: nextProps.errors })
     }
   }
 
   onChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({ [e.target.name]: e.target.value })
   };
 
   onSubmit(e) {
@@ -70,7 +70,7 @@ class CreateProfile extends Component {
   }
 
   render() {
-    const { errors, displaySocialInputs } = this.state;
+    const { errors, displaySocialInputs } = this.state
 
     // local variable to distructure displaySocialInputs
     let socialInputs

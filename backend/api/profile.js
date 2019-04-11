@@ -68,21 +68,22 @@ router.post(
     const profileFields = {}
     profileFields.user = req.user.id
     if (req.body.handle) profileFields.handle = req.body.handle
-    if (req.body.bio) profileFields.bio = req.body.bio
-    if (req.body.location) profileFields.location = req.body.location
+    // Allow to revert back to empty
+    req.body.bio ? (profileFields.bio = req.body.bio) : (profileFields.bio = '')
+    req.body.location ? (profileFields.location = req.body.location) : (profileFields.location = '')
     if (req.body.status) profileFields.status = req.body.status
     // Skills must be split in to an array
     if (typeof req.body.skills !== "undefined") {
       profileFields.skills = req.body.skills.split(",")
     }
-    if (req.body.github) profileFields.github = req.body.handle
+    req.body.github ? (profileFields.github = req.body.github) : (profileFields.github = '')
 
     // Social
     profileFields.social = {}
-    if (req.body.twitter) profileFields.social.twitter = req.body.twitter
-    if (req.body.facebook) profileFields.social.facebook = req.body.facebook
-    if (req.body.linkedin) profileFields.social.linkedin = req.body.linkedin
-    if (req.body.instagram) profileFields.social.instagram = req.body.instagram
+    req.body.twitter ? (profileFields.social.twitter = req.body.twitter) : (profileFields.twitter = '')
+    req.body.facebook ? (profileFields.social.facebook = req.body.facebook) : (profileFields.facebook = '')
+    req.body.linkedin ? (profileFields.social.linkedin = req.body.linkedin) : (profileFields.linkedin = '')
+    req.body.instagram ? (profileFields.social.instagram = req.body.instagram) : (profileFields.instagram = '')
 
     // Contact
     profileFields.contact = {}
