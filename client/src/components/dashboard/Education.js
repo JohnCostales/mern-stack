@@ -40,10 +40,10 @@ class Education extends Component {
                             <th>Institution</th>
                             <th>Degree</th>
                             <th>Course</th>
+                            <th>Location</th>
                             <th>From - To</th>
                             <th>Actions</th>
                         </tr>
-
                     </thead>
                     <tbody>
                         {education}

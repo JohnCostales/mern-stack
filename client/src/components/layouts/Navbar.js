@@ -34,7 +34,7 @@ class Navbar extends Component {
           </a>
           <div className="dropdown-menu" aria-labelledby="dropdown04">
             <Link className="nav-link" to="/dashboard">
-            <i className="fas fa-user"></i>
+              <i className="fas fa-user"></i>
               {' '}Profile
               </Link>
             <a
@@ -86,8 +86,8 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse" id="mobile-nav">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/Blogs">
-                  Blogs
+                <Link className="nav-link" to="/profiles">
+                  Portfolios
                 </Link>
               </li>
             </ul>

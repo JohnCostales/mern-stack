@@ -3,7 +3,8 @@ import {
   PROFILE_LOADING,
   GET_PROFILE,
   CLEAR_CURRENT_PROFILE,
-  GET_ERRORS
+  GET_ERRORS,
+  GET_PROFILES
 } from './types'
 
 // Get current profiles.
@@ -22,6 +23,46 @@ export const getCurrentProfile = () => dispatch => {
       dispatch({
         type: GET_PROFILE,
         payload: {}
+      })
+    )
+}
+
+// Get profile handles
+export const getProfileByHandle = (handle) => dispatch => {
+  // Do an action before request
+  dispatch(setProfileLoading())
+  axios
+    .get(`/api/profile/handle/${handle}`)
+    .then(res =>
+      dispatch({
+        type: GET_PROFILE,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_PROFILE,
+        payload: null
+      })
+    )
+}
+
+// Get all profiles.
+export const getProfiles = () => dispatch => {
+  // Do an action before request
+  dispatch(setProfileLoading())
+  axios
+    .get('/api/profile/all')
+    .then(res =>
+      dispatch({
+        type: GET_PROFILES,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_PROFILES,
+        payload: null
       })
     )
 }
