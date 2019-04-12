@@ -37,6 +37,10 @@ class Navbar extends Component {
               <i className="fas fa-user"></i>
               {' '}Profile
               </Link>
+            <Link className="nav-link" to="/posts">
+              <i className="fas fa-book"></i>
+              {' '}Blog Posts
+              </Link>
             <a
               href="/"
               onClick={this.onLogoutClick.bind(this)}
@@ -69,7 +73,7 @@ class Navbar extends Component {
       <nav className="navbar navbar-expand-md navbar navbar-light bg-lightblue mb-4">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            MyPorfolio
+            JC
           </Link>
           <button
             className="navbar-toggler"
@@ -86,8 +90,8 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse" id="mobile-nav">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/profiles">
-                  Portfolios
+                <Link className="nav-link" to="/profile/johncostales">
+                  Profile
                 </Link>
               </li>
             </ul>

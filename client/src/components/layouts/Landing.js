@@ -11,7 +11,7 @@ class Landing extends Component {
                             <h1 className="display-3 mb-4">Welcome to myPortfolio</h1>
                             <p className="lead"></p>
                             <hr />
-                            <Link to="profile/user/SET-THIS-TO-MY-ID" className="btn btn-lg btn-info mr-2">My Portfolio</Link>
+                            <Link to="profile/johncostales" className="btn btn-lg btn-info mr-2">My Portfolio</Link>
                             <Link to="/blog" className="btn btn-lg btn-light">Blog post</Link>
                         </div>
                     </div>

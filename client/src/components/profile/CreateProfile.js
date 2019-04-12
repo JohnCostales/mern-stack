@@ -32,9 +32,7 @@ class CreateProfile extends Component {
 
   componentWillReceiveProps(nextProps) {
     // Set state if props is an error
-    if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors })
-    }
+    if (nextProps.errors) this.setState({ errors: nextProps.errors })
   }
 
   onChange = e => {

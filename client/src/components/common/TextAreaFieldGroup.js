@@ -15,7 +15,7 @@ const TextAreaFieldGroup = ({
     return (
         <div className="form-group">
             <textarea
-                className={classnames('form-control form-control-lg', {
+                className={classnames('form-control form-control-lg textarea-size', {
                     'is-invalid': error
                 })}
                 placeholder={placeholder}

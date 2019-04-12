@@ -25,6 +25,9 @@ import AddExperience from './components/profile/AddExperience';
 import AddEducation from './components/profile/AddEducation';
 import Profiles from './components/portfolios/Profiles';
 import Portfolio from './components/portfolios/Portfolio/Portfolio';
+import Blogs from './components/blogs/Blogs';
+import Blog from './components/blog/Blog';
+import CreateBlog from './components/blogs/BlogForm';
 
 // Check for tokens and keep authenticated
 if (localStorage.jwtToken) {
@@ -73,10 +76,17 @@ class App extends Component {
                   <Switch>
                     <PrivateRoute exact path="/add-education" component={AddEducation} />
                   </Switch>
+                  <Switch>
+                    <PrivateRoute exact path="/posts" component={Blogs} />
+                  </Switch>
+                  <Switch>
+                    <PrivateRoute exact path="/create-blog" component={CreateBlog} />
+                  </Switch>
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/profiles" component={Profiles} />
                   <Route exact path="/profile/:handle" component={Portfolio} />
+                  <Route exact path="/blog/:id" component={Blog} />
                 </div>
               </div>
             </div>
