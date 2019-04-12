@@ -12,7 +12,7 @@ class Landing extends Component {
                             <p className="lead"></p>
                             <hr />
                             <Link to="profile/johncostales" className="btn btn-lg btn-info mr-2">My Portfolio</Link>
-                            <Link to="/blog" className="btn btn-lg btn-light">Blog post</Link>
+                            <Link to="/posts" className="btn btn-lg btn-light">Blog post</Link>
                         </div>
                     </div>
                 </div>
