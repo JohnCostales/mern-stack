@@ -16,16 +16,17 @@ class Register extends Component {
             confPass: '',
             errors: {}
         }
-
         this.onSubmit = this.onSubmit.bind(this)
     }
 
+    // LifeCycle Method. if authenticated push to /dashboard component
     componentDidMount() {
         if (this.props.auth.isAuthenticated) {
             this.props.history.push('/dashboard')
         }
     }
 
+    //If nextProps contains errors. setState for errors
     componentWillReceiveProps(nextProps) {
         if (nextProps.errors) {
             this.setState({ errors: nextProps.errors })
@@ -119,7 +120,7 @@ class Register extends Component {
 }
 
 
-// Map all of the prop types
+// Map all of the prop types. Use PropTypes through redux
 Register.propTypes = {
     registerUser: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,

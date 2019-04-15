@@ -43,6 +43,7 @@ class Login extends Component {
         this.props.loginUser(userData, this.props.history)
     }
 
+    // Change the components state
     onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }

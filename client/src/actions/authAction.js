@@ -13,7 +13,9 @@ export const registerUser = (userData, history) => dispatch => {
         .then(res => history.push('/login'))
         .catch(err =>
             dispatch({
+                // Change action type
                 type: GET_ERRORS,
+                // Fill payload with error responses
                 payload: err.response.data
             })
         )
