@@ -49,10 +49,13 @@ npm install (or yarn install)
 npm run client-install (or yarn client-install)
 
 # Build for production
-yarn build (or npm run build)
+npm run build (or yarn build)
 
 # Start production server
-yarn start (or npm start)
+npm run start (or yarn start)
+
+# Run client and server
+npm run dev (or yarn dev)
 ```
 
 You will also need to create a key_dev.js in the serve config folder with
