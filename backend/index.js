@@ -39,7 +39,7 @@ app.use("/api/authentication", userAuth);
 app.use("/api/blogs", blog);
 
 //Server static assets if in production
-if (process.env.NODE_ENV == 'production') {
+if (process.env.NODE_ENV === 'production') {
   //Set static folder
   app.use(express.static('../client/build'))
 
@@ -49,6 +49,6 @@ if (process.env.NODE_ENV == 'production') {
 }
 
 // Run on heroku or local port 3000
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server running on port ${port}`));
