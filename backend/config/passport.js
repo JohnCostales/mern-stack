@@ -8,7 +8,7 @@ const ExtractJwt = require('passport-jwt').ExtractJwt
 
 // Library
 const mongoose = require('mongoose')
-const keys = require('../config/keys')
+const keys = require('./config/keys')
 
 //Models
 const User = mongoose.model('users')
