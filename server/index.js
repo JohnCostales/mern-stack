@@ -12,11 +12,26 @@ const blog = require("../backend/api/blogs");
 
 const app = express();
 
-app.get('/', (req, res) => res.send('test?'))
-
 // Body-Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+// app.get('/', (req, res) => res.send('test?'))
+
+// Database Configuration
+const db = require("../config/keys").mongoURI;
+
+// Connect to MongoDB
+mongoose
+  .connect(db)
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
+
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport Config
+require("../config/passport")(passport);
 
 // Use Routes
 app.use("/api/profile", profile);
@@ -33,20 +48,6 @@ if (process.env.NODE_ENV == 'production') {
   })
 }
 
-// Database Configuration
-const db = require("../config/keys").mongoURI;
-
-// Connect to MongoDB
-mongoose
-  .connect(db, { useNewUrlParser: true })
-  .then(() => console.log("MongoDB Connected"))
-  .catch(err => console.log(err));
-
-// Passport middleware
-app.use(passport.initialize());
-
-// Passport Config
-require("../config/passport")(passport);
 // Run on heroku or local port 3000
 const port = process.env.port || 5000;
 
