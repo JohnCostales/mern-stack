@@ -2,7 +2,7 @@
   "name": "advancedjavascriptca2",
   "version": "1.0.0",
   "description": "CA2 for Advanced JavaScript",
-  "main": "./backend/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "npm run start --prefix backend",
     "backend": "npm run server --prefix backend",
