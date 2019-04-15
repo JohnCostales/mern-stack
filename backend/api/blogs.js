@@ -1,7 +1,7 @@
 // Library
 const express = require("express")
 const router = express.Router()
-const mognoose = require("mongoose")
+const mongoose = require("mongoose")
 const passport = require("passport")
 
 const Blog = require('../model/Blog')
