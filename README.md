@@ -45,8 +45,14 @@ cd simple-react-full-stack
 # Install dependencies for server
 npm install (or yarn install)
 
+# Change directory to client
+cd client
+
 # Install dependencies for client
-npm run client-install (or yarn client-install)
+npm install (or yarn install)
+
+# Go back a directory
+cd ..
 
 # Build for production
 npm run build (or yarn build)
